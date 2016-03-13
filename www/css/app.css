@@ -1,0 +1,30 @@
+﻿.app-content
+{
+    overflow: auto;
+    top: 2.75em;
+    left:0;
+    right:0;
+    bottom:0;
+    position:absolute;
+}
+
+.app-header
+{
+    overflow: hidden;
+    height: 2.75em;
+    left:0;
+    right:0;
+    position:absolute;
+    z-index:100;
+    background-color: rgba(4,4,4,0.5);
+}
+
+.ui-header .ui-btn
+{
+    background-color: transparent !important;
+    border: none;
+}
+.ui-header .ui-title
+{
+    margin: 0 20%;
+}

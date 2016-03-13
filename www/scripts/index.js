@@ -7,16 +7,18 @@
 
     document.addEventListener( 'deviceready', onDeviceReady.bind( this ), false );
 
+    var layoutState =
+        {
+            headerIsVisible: false,
+            layoutClass: "layout-2",
+            pageId:0
+        };
+
     function onDeviceReady() {
         // Handle the Cordova pause and resume events
         document.addEventListener( 'pause', onPause.bind( this ), false );
         document.addEventListener( 'resume', onResume.bind( this ), false );
         
-        // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
-        var element = document.getElementById("deviceready");
-        element.innerHTML = 'Device Ready 1';
-        element.className += ' ready';
-
         document.getElementsByClassName("js-ir-on")[0].onclick = function (ev)
         {
             var x = $.get("http://5.5.5.141/light-command.py?cmd=On:wardrobeIr");
@@ -47,6 +49,36 @@
                 log.error("Off: error, " + e1 + " " + e2 + " " + e3);
             });
         };
+
+        $(".js-app-layout").click(layout_click);
+
+        updateCameraLits();
+        updateUI();
+    };
+
+    function updateCameraLits()
+    {
+        var items = $(".js-app-layout").empty();
+        var camIds = App.Profile.Cameras.items();
+
+        for (var i = 0; i < camIds.length; i++)
+        {
+            var camera = App.Profile.Cameras.get(camIds[i]);
+            var node = $("<div class='camera'><img class='camera-view'/></div>").appendTo(items);
+            node.find("img").attr("src",camera.url);
+        }
+    };
+
+    function updateUI()
+    {
+        $(".js-app-layout-header")[layoutState.headerIsVisible ? "slideDown" : "slideUp"]("fast");
+        $(".js-app-layout")[0].className = "js-app-layout " + layoutState.layoutClass;
+    };
+
+    function layout_click()
+    {
+        layoutState.headerIsVisible = !layoutState.headerIsVisible;
+        updateUI();
     };
 
     function onPause() {

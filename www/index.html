@@ -16,34 +16,39 @@
         <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
 
+        <link rel="stylesheet" href="css/app.css" />
         <link rel="stylesheet" href="css/camera.css" />
         <link rel="stylesheet" href="css/logger.css" />
 
         <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
+        <script type="text/javascript" src="scripts/profileStorage.js"></script>
+        <script type="text/javascript" src="scripts/profile.js"></script>
+        <script type="text/javascript" src="scripts/logger.js"></script>
 
         <title>TinyCamCam</title>
     </head>
     <body>
         <div class="app">
-            <div class="layout-2">
+            
+            <div class="ui-header app-header js-app-layout-header ui-bar-a" data-swatch="a" data-theme="a" data-form="ui-bar-a" data-role="header" role="banner">
+                <a href="#" role="button" data-role="button" class="main-menu ui-btn-left ui-btn-corner-all ui-btn ui-icon-bars ui-btn-icon-notext" data-form="ui-icon">&nbsp;</a>
+                <h1 class="ui-title" tabindex="0" role="heading" aria-level="1">Adv Camera Viewer</h1>
+                <a onclick="location.href = 'cameraList.html'" role="button" data-role="button" class="ui-btn-right ui-btn-corner-all ui-btn ui-icon-edit ui-btn-icon-notext" data-form="ui-icon">&nbsp;</a>
+            </div>
+
+            <div class="js-app-layout">
                 <div class="camera">
                     <img class="camera-view" src="http://5.5.5.141:8081/" alt="123" />
 
                     <button class="ui-btn ui-btn-inline camera-button js-ir-on">On</button>
                     <button class="ui-btn ui-btn-inline camera-button js-ir-off" style="left: 55pt;">Off</button>
                 </div>
-                <!--div class="camera">
-                    <img class="camera-view" src="http://5.5.5.141:8082/" alt="123" />
-                </div-->
             </div>
-            
-            <p id="deviceready" class="event">Connecting to Device</p>
         </div>
         <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="scripts/platformOverrides.js"></script>
-        <script type="text/javascript" src="scripts/logger.js"></script>
+        <script type="text/javascript" src="scripts/platformOverrides.js"></script>        
         <script type="text/javascript" src="scripts/index.js"></script>
     </body>
 </html>
