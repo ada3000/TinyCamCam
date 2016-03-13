@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <!--
+        Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
+        For details, see http://go.microsoft.com/fwlink/?LinkID=617521
+    -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval';img-src * data:;script-src * 'unsafe-inline' 'unsafe-eval'; style-src * 'unsafe-inline'; media-src *; connect-src *">
+        
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <!--link rel="stylesheet" type="text/css" href="css/index.css"-->
+        
+        <link rel="stylesheet" href="css/themes/tinyCamCam.min.css" />
+        <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+
+        <link rel="stylesheet" href="css/camera.css" />
+        <link rel="stylesheet" href="css/logger.css" />
+
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+
+        <title>TinyCamCam</title>
+    </head>
+    <body>
+        <div class="app">
+            <div class="layout-2">
+                <div class="camera">
+                    <img class="camera-view" src="http://5.5.5.141:8081/" alt="123" />
+
+                    <button class="ui-btn ui-btn-inline camera-button js-ir-on">On</button>
+                    <button class="ui-btn ui-btn-inline camera-button js-ir-off" style="left: 55pt;">Off</button>
+                </div>
+                <!--div class="camera">
+                    <img class="camera-view" src="http://5.5.5.141:8082/" alt="123" />
+                </div-->
+            </div>
+            
+            <p id="deviceready" class="event">Connecting to Device</p>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+        <script type="text/javascript" src="scripts/logger.js"></script>
+        <script type="text/javascript" src="scripts/index.js"></script>
+    </body>
+</html>
