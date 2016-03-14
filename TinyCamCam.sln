@@ -5,6 +5,11 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{262852C6-CD72-467D-83FE-5EEB1973A190}") = "TinyCamCam", "TinyCamCam.jsproj", "{EB34A47A-938C-439B-9B15-E7F7D30BB86F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{21BC1EB5-D9E0-4E98-8C0E-B5BAFDC8E848}"
+	ProjectSection(SolutionItems) = preProject
+		План работ.txt = План работ.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Android = Debug|Android
